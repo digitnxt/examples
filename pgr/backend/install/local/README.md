@@ -14,10 +14,8 @@ Ensure the following are installed on your machine:
 ## Clone the Repo
 
 ```bash
-git clone https://github.com/digitnxt/digit3.git
-cd digit3
-git checkout develop
-cd deploy/local
+git clone https://github.com/digitnxt/examples.git
+cd pgr/backend/install/local
 
 ## Spin up Digit 3.0
 
@@ -27,11 +25,10 @@ docker compose up -d
 
 docker compose down -v
 
-delete the volumes if you face migration issues. It might fail if there is network issue, do a cleanup using below command in that case too and try "docker compose up -d" again-
+delete the volumes if you face migration issues. It might fail if there is network issue, do a cleanup using below command in that case too and try "docker compose up -d" again:
+
+```
 docker system prune -f --volumes (⚠️ be cautious — this removes all unused containers, images, volumes)
+```
 
-## Update etc/hosts(Only if you need rbac and running via kong gateway. for testing and development use the core services directly to avoid complications)
-
-Run in terminal: echo "127.0.0.1 keycloak" | sudo tee -a /etc/hosts(for windows update it manually in C:\Windows\System32\drivers\etc\hosts
-)
 
