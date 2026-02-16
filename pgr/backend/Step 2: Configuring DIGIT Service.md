@@ -88,8 +88,13 @@ Note1: Use the below command to override the default boundaries:
 ```bash
 digit create-boundaries --file <BOUNDARY_FILE_PATH>
 ```
+## 7. MDMS SCHEMA:
+Here we are using the default flag which has the default configuration for PGR.
 
-## 7. REGISTRY SCHEMA: 
+```bash
+digit create-mdms-schema --default --code "PGR"
+```
+## 8. REGISTRY SCHEMA: 
 
 Here we are using the file 'pgr2-registry-schema.yaml' which has all the process, states and actions we require. You can download this file [here](https://github.com/digitnxt/digit3/blob/master/docs/tutorials/backend/examples/pgr2-registry-schema.yaml) and copy the path.
 
@@ -102,7 +107,7 @@ Confirm the schema is created using the search command(Append --server for this 
 digit search-registry-schema --schema-code pgr2 --server http://localhost:8104
 ```
 
-## 8. CREATING AN USER IN ACCOUNT
+## 9. CREATING AN USER IN ACCOUNT
 
 Let us create a user called John Doe with password, mypassword and email, john@example.com.
 
@@ -117,7 +122,7 @@ digit search-user --username johndoe
 
 ```
 
-## 9. CREATE ROLE
+## 10. CREATE ROLE
 
 Here we are creating the role of CSR, i.e., Citizen Service Representative.
 
@@ -125,7 +130,7 @@ Here we are creating the role of CSR, i.e., Citizen Service Representative.
 digit create-role --role-name CSR --description "Administrator role"
 ```
 
-## 10. ASSIGN ROLE TO USER
+## 11. ASSIGN ROLE TO USER
 
 First we must make Johndoe a SUPERUSER.
 
