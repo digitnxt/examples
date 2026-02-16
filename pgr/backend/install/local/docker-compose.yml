@@ -351,7 +351,7 @@ services:
 
   account:
     container_name: account
-    image: egovio/account:boundary-changes-new-548a02c-amd64
+    image: egovio/account:account-realm-config-fix-4de321a
     environment:
       SERVER_PORT: 8080
       DB_HOST: postgres
