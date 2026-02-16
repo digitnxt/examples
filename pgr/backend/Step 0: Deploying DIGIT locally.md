@@ -14,10 +14,8 @@ Ensure the following are installed on your machine:
 ## Clone the Repo
 
 ```bash
-git clone https://github.com/digitnxt/digit3.git
-cd digit3
-git checkout develop
-cd deploy/local
+git clone https://github.com/digitnxt/examples.git
+cd pgr/backend/install/local
 
 ## Spin up Digit 3.0
 
