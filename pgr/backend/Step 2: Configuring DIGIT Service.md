@@ -32,7 +32,7 @@ Let us create an account <b>Amaravati</b> for this tutorial, with email: <b>test
 ```bash
 digit create-account --name Amaravati --email test@example.com --server http://localhost:8095
 ```            
-Note: This may take some time.
+_Note: This may take some time as we complete all necessary steps to set up your account._
 
 ## 2. CONFIGURE THE ACCOUNT
 Customize the account’s experience and settings after sign-up, by setting up the account with relevant parameters.
