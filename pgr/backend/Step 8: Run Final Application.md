@@ -38,7 +38,7 @@ NOTE: Replace the <FILESTORE_ID> below with the ID of uploaded file.
 ```bash
 curl --location 'http://localhost:8083/citizen-service/create' \
 --header 'Content-Type: application/json' \
---header 'x-tenant-id: SHILLONG' \
+--header 'x-tenant-id: AMARAVATI' \
 --header 'x-client-id: kuiyt' \
 --data-raw '{
   "service": {
