@@ -90,7 +90,7 @@ digit create-boundaries --file <BOUNDARY_FILE_PATH>
 ```
 
 ## 7. MDMS SCHEMA:
-Here we are using the default flag which has the default configuration for PGR.
+Here, we use the --default flag to apply the preconfigured MDMS schema for PGR.
 
 This creates the schema:
 ```bash
