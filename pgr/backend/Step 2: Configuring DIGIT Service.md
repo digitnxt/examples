@@ -101,7 +101,7 @@ And this command creates the data within the schema:
 ```bash
 digit create-mdms-data --file mdms-data.yaml
 ```
-[This]() file was used.
+[This](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-data.yaml) file was used.
 ## 8. REGISTRY SCHEMA: 
 
 Here we are using the file 'pgr2-registry-schema.yaml'. You can download this file [here](https://github.com/digitnxt/digit3/blob/master/docs/tutorials/backend/examples/pgr2-registry-schema.yaml) and copy the path.
