@@ -1,6 +1,6 @@
 # DIGIT 3.0 - Docker Compose Setup
 
-This repository allows you to run the complete **DIGIT 3.0 core stack** locally using Docker Compose. It includes all essential services like MDMS, account, Workflow,idgen, Filestore, and more — all preconfigured for local development and exploration.
+This repository allows you to run the complete **DIGIT 3.0 core stack** locally using Docker Compose.
 
 ---
 
@@ -25,10 +25,10 @@ docker compose up -d
 
 docker compose down -v
 
+```
 delete the volumes if you face migration issues. It might fail if there is network issue, do a cleanup using below command in that case too and try "docker compose up -d" again:
-
 ```
 docker system prune -f --volumes (⚠️ be cautious — this removes all unused containers, images, volumes)
-```
+
 
 
