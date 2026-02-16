@@ -94,7 +94,7 @@ Here, we use the --default flag to apply the preconfigured MDMS schema for PGR.
 
 This creates the schema:
 ```bash
-digit create-mdms-schema --default --code "PGR"
+digit create-registry-schema --default --schema-code "PGR"
 ```
 
 And this command creates the data within the schema:
