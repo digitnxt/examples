@@ -84,14 +84,14 @@ digit create-boundaries --default
 ```
 Note1: The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-boundaries.yaml)
 
-Note1: Use the below command to override the default boundaries:
+Note2: Use the below command to override the default boundary configuration:
 ```bash
 digit create-boundaries --file <BOUNDARY_FILE_PATH>
 ```
 
 ## 7. REGISTRY SCHEMA: 
 
-Here we are using the file 'pgr2-registry-schema.yaml' which has all the process, states and actions we require. You can download this file [here](https://github.com/digitnxt/digit3/blob/master/docs/tutorials/backend/examples/pgr2-registry-schema.yaml) and copy the path.
+Here we are using the file 'pgr2-registry-schema.yaml'. You can download this file [here](https://github.com/digitnxt/digit3/blob/master/docs/tutorials/backend/examples/pgr2-registry-schema.yaml) and copy the path.
 
 ```bash
 digit create-registry-schema --file <REGISTRY_FILE_PATH>
