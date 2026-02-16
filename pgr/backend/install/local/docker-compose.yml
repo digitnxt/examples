@@ -45,7 +45,7 @@ services:
 
   workflow-migration:
     container_name: workflow-migration
-    image: egovio/workflow-db:develop-eae753d
+    image: egovio/workflow-db:workflow-optimization-58875e1
     entrypoint: ["/usr/bin/migrate.sh"]
     environment:
       DB_URL: jdbc:postgresql://postgres:5432/postgres
@@ -64,7 +64,7 @@ services:
 
   workflow-service:
     container_name: workflow-service
-    image: egovio/workflow:develop-eae753d
+    image: egovio/workflow:workflow-optimization-58875e1
     environment:
       DB_HOST: postgres
       DB_PORT: 5432
@@ -140,7 +140,7 @@ services:
     image: egovio/keycloak:keycloak-spi-multiarch
     mem_limit: 1g
     environment:
-      KC_PROXY: edge
+      KC_PROXY: none
       KC_HOSTNAME: keycloak
       KC_HOSTNAME_PORT: "8080"
       KC_HOSTNAME_STRICT: "false"
@@ -204,8 +204,8 @@ services:
       FILESTORE_PATH: /filestore/v1/files
       SMTP_HOST: smtp.gmail.com
       SMTP_PORT: 587
-      SMTP_USERNAME: example@gmail.com
-      SMTP_PASSWORD: ""
+      SMTP_USERNAME: digit.sandbox@egovernments.org
+      SMTP_PASSWORD: qxiswrtilznheqxa
       SMTP_FROM_ADDRESS: example@gmail.com
       SMTP_FROM_NAME: egov
       SMS_PROVIDER_URL: http://api.smscountry.com/SMSCwebservice_bulk.aspx
@@ -332,7 +332,7 @@ services:
 
   account-migration:
     container_name: account-migration
-    image: egovio/account-db:develop-49f70d0
+    image: egovio/account-db:account-realm-config-fix-4de321a
     entrypoint: ["/usr/bin/migrate.sh"]
     environment:
       DB_URL: jdbc:postgresql://postgres:5432/postgres
@@ -351,7 +351,7 @@ services:
 
   account:
     container_name: account
-    image: egovio/account:develop-0d9e421
+    image: egovio/account:boundary-changes-new-548a02c-amd64
     environment:
       SERVER_PORT: 8080
       DB_HOST: postgres
@@ -363,7 +363,6 @@ services:
       KEYCLOAK_BASE_URL: http://keycloak:8080/keycloak
       KEYCLOAK_ADMIN_USER: admin
       KEYCLOAK_ADMIN_PASS: admin
-      KEYCLOAK_REALM_CONFIG_PATH: realm_config.json
       NOTIFICATION_BASE_URL: http://notification:8080
       CITIZEN_BROKER_CLIENT_ID: citizen-broker
       CITIZEN_BROKER_CLIENT_SECRET: sW2iIWd6Da8JpeGoAuWWcnbDFYT31rk3-clientsecrete
@@ -401,7 +400,7 @@ services:
 
   kong:
     container_name: kong
-    image: mithunhegdeegov/gateway-kong:multiarch2
+    image: mithunhegdeegov/gateway-kong:multiarch4
     environment:
       KONG_DATABASE: postgres
       KONG_PG_HOST: postgres
@@ -424,6 +423,12 @@ services:
     depends_on:
       kong-migration:
         condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "kong", "health"]
+      interval: 10s
+      timeout: 10s
+      retries: 20 # Increased retries
+      start_period: 60s # Increased start_period
     labels:
       - env=dev
       - app=kong
@@ -584,7 +589,7 @@ services:
 
   mdms-v2-migration:
     container_name: mdms-v2-migration
-    image: egovio/mdms-v2-db:mdms-aaradhya-1-ceb5f64
+    image: egovio/mdms-v2-db:mdms-aaradhya-1-changes-113e854
     entrypoint: ["/usr/bin/migrate.sh"]
     environment:
       DB_URL: jdbc:postgresql://postgres:5432/postgres
@@ -603,8 +608,9 @@ services:
 
   mdms-v2:
     container_name: mdms-v2
-    image: egovio/mdms-v2:mdms-aaradhya-1-ceb5f64
+    image: egovio/mdms-v2:mdms-aaradhya-1-changes-113e854
     environment:
+      SERVER_PORT: 8080
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: password
@@ -615,7 +621,7 @@ services:
       SPRING_REDIS_PASSWORD: ""
       SPRING_REDIS_DB: 0
     ports:
-      - "8099:8094"
+      - "8099:8080"
     depends_on:
       postgres:
         condition: service_healthy
@@ -699,7 +705,7 @@ services:
 
   registry-migration:
     container_name: registry-migration
-    image: egovio/registry-db:registry-service-2876a8b
+    image: egovio/registry-db:registry-service-962164d
     entrypoint: ["/usr/bin/migrate.sh"]
     environment:
       DB_URL: jdbc:postgresql://postgres:5432/postgres
@@ -718,7 +724,7 @@ services:
 
   registry:
     container_name: registry
-    image: egovio/registry:registry-service-2876a8b
+    image: egovio/registry:registry-service-962164d
     environment:
       PORT: 8080
       DB_HOST: postgres
@@ -737,7 +743,7 @@ services:
       LOG_LEVEL: info
       GIN_MODE: release
       IDGEN_BASE_URL: http://idgen:8080/idgen
-      IDGEN_TEMPLATE_ID: registryId
+      IDGEN_TEMPLATE_ID: pgr
       IDGEN_ORG_VALUE: REGISTRY
       IDGEN_HTTP_TIMEOUT: 5s
       OTEL_TRACES_EXPORTER: none
@@ -796,7 +802,7 @@ services:
       REDIS_PASSWORD: ""
       REDIS_DB: 0
       REDIS_POOL_SIZE: 10
-      IDGEN_HOST: http://idgen:8080
+      IDGEN_HOST: http://idgen:8080/
       IDGEN_PATH: idgen/v1/generate
       IDGEN_ENABLED: "true"
       IDGEN_INDIVIDUAL_ID_FORMAT: individual
@@ -1033,10 +1039,16 @@ services:
 
   kong-setup:
     container_name: kong-setup
-    image: mithunhegdeegov/kong_setup:multiarch7
+    image: anishegov/kong-setup:latest # Use the pre-built multi-arch image
+    # command: ["python3", "setup.py"] # Command to run setup.py
+    environment: # Environment variables for setup.py
+      KONG_ADMIN_URL: http://kong:8001
+      KEYCLOAK_URL: http://keycloak:8080/keycloak
     depends_on:
       kong:
         condition: service_healthy
+      keycloak: # Added dependency on keycloak being healthy too, as setup.py uses it
+        condition: service_started
     restart: "no"
     labels:
       - env=dev
