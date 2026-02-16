@@ -96,6 +96,12 @@ Here we are using the file 'pgr2-registry-schema.yaml' which has all the process
 ```bash
 digit create-registry-schema --file <REGISTRY_FILE_PATH>
 ```
+
+Confirm the schema is created using the search command(Append --server for this command alone. It is a WIP and will be fixed in the final release)
+```bash
+digit search-registry-schema --schema-code pgr2 --server http://localhost:8104
+```
+
 ## 8. CREATING AN USER IN ACCOUNT
 
 Let us create a user called John Doe with password, mypassword and email, john@example.com.
