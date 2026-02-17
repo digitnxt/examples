@@ -4,6 +4,8 @@ This repository allows you to run the complete **DIGIT 3.0 core stack** locally 
 
 ---
 
+Follow along with [this video](https://github.com/digitnxt/examples/blob/main/pgr/backend/videos/Deploy_DIGIT_with_Docker.mp4)
+
 ## Prerequisites
 
 Ensure the following are installed on your machine:
