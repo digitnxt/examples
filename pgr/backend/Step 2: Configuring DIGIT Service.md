@@ -75,7 +75,7 @@ Customize the account’s experience and settings after sign-up, by setting up t
 digit config set --server http://localhost:8095 --account AMARAVATI --client-id auth-server --client-secret changeme --username test@example.com --password default
 ```
 
-NOTE: In case of token expiry run the above command again.
+NOTE: In case of token expiry in any of the further steps, run the above command again.
 
 ## 3. IDGEN CONFIGURATION: Configure the template we require for ID generation in the PGR module:
 
@@ -98,9 +98,9 @@ make sure configuration is created.
 ```bash
 digit search-workflow --code PGR
 ```
-Note1: The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-workflow.yaml)
+NOTE : The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-workflow.yaml)
 
-Note2: Use the below command to override the default workflow:
+Use the below command to override the default workflow:
 ```bash
 digit create-workflow  --code PGR --file <WORKFLOW_FILE_PATH>
 ```
@@ -121,9 +121,9 @@ Here we are using the default configuration.
 ```bash
 digit create-boundaries --default
 ```
-NOTE 1: The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-boundaries.yaml)
+NOTE : The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-boundaries.yaml) for boundary creation.
 
-NOTE 2: Use the below command to override the default boundary configuration:
+Use the below command to override the default boundary configuration:
 ```bash
 digit create-boundaries --file <BOUNDARY_FILE_PATH>
 ```
@@ -136,20 +136,19 @@ This creates the mdms schema:
 ```bash
 digit create-mdms-schema --default --code "PGR"
 ```
-[This](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-schema.yaml) file was used for default schema creation.
+NOTE: The default flag use [this file](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-schema.yaml) for schema creation.
 
 And this command creates the data within the schema:
 ```bash
 digit create-mdms-data --default --schema-code "PGR"
 ```
-[This](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-data.yaml) file was used for default data creation.
+NOTE:The default flag uses [this file](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-data.yaml) for data creation.
 ## 8. REGISTRY CONFIGURATION: 
-
-Here we are using the file 'pgr2-registry-schema.yaml'. You can download this file [here](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/pgr2-registry-schema.yaml) and copy the path.
 
 ```bash
 digit create-registry-schema --default --schema-code "PGR"
 ```
+NOTE: The default flag uses [this file](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/pgr2-registry-schema.yaml) for registry schema creation.
 
 Confirm the schema is created using the search command(Append --server for this command alone. It is a WIP and will be fixed in the final release)
 ```bash
