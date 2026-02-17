@@ -98,9 +98,9 @@ make sure configuration is created.
 ```bash
 digit search-workflow --code PGR
 ```
-NOTE : The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-workflow.yaml)
+NOTE : The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-workflow.yaml) for workflow configuration
 
-Use the below command to override the default workflow:
+Use the below command to override the default workflow configuration:
 ```bash
 digit create-workflow  --code PGR --file <WORKFLOW_FILE_PATH>
 ```
