@@ -32,15 +32,16 @@ docker compose up -d
 docker compose down -v
 ```
 
-## delete the volumes using below commands
+## delete/cleanup the volumes using below commands
 
 ```bash
-docker system prune -f --volumes (⚠️ be cautious — this removes all unused containers, images, volumes)
+docker compose down --volumes --remove-orphans
 ```
 
 ```bash
-docker compose down --volumes --remove-orphans(If you do not want to remove everything)
+docker system prune -f --volumes (be careful as this removes all unused containers, images, volumes)
 ```
+
 
 
 
