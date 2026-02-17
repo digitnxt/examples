@@ -25,7 +25,7 @@ A step-by-step backend developer tutorial for building a complete microservice o
 Clone this repository and navigate to the project of interest:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/digitnxt/examples.git
 cd examples/pgr
 ```
 
