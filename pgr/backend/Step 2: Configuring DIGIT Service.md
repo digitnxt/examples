@@ -11,8 +11,6 @@ Follow the following steps to configure the PGR module:
 
 0. Install DIGIT CLI
 
-Download the latest release for your platform from the [releases page](https://github.com/digitnxt/digit3/releases):
-
 **Linux (x86_64):**
 ```bash
 # Download and install
@@ -43,7 +41,7 @@ chmod +x /usr/local/bin/digit
 
 **Windows:**
 ```powershell
-# Download from releases page and extract digit.exe
+# Download the latest release from the [releases page](https://github.com/digitnxt/digit3/releases) and extract digit.exe
 # Add the directory containing digit.exe to your PATH
 ```
 
