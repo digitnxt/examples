@@ -77,17 +77,18 @@ digit create-notification-template --template-id "my-template" --version "1.0.0"
 
 ## 6. BOUNDARY CONFIGURATION: Configure the boundary hierarchy, boundaries and boundary relationships require for the PGR module:
 
-Here we are using the default configuration which has all the boundary hierarchy, boundaries and boundary relationships we require. 
+Here we are using the default configuration. 
 
 ```bash
 digit create-boundaries --default
 ```
-Note1: The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-boundaries.yaml)
+NOTE 1: The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-boundaries.yaml)
 
-Note2: Use the below command to override the default boundary configuration:
+NOTE 2: Use the below command to override the default boundary configuration:
 ```bash
 digit create-boundaries --file <BOUNDARY_FILE_PATH>
 ```
+NOTE: The CLI currently supports only boundary creation. Hierarchy and relationship support via CLI using yaml file is WIP and will be available in the final release.
 
 ## 7. MDMS SCHEMA:
 Here, we use the --default flag to apply the preconfigured MDMS schema for PGR.
@@ -108,12 +109,12 @@ digit create-mdms-data --default --schema-code "PGR"
 Here we are using the file 'pgr2-registry-schema.yaml'. You can download this file [here](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/pgr2-registry-schema.yaml) and copy the path.
 
 ```bash
-digit create-registry-schema --file <REGISTRY_FILE_PATH>
+digit create-registry-schema --default --schema-code "pgr"
 ```
 
 Confirm the schema is created using the search command(Append --server for this command alone. It is a WIP and will be fixed in the final release)
 ```bash
-digit search-registry-schema --schema-code pgr2 --server http://localhost:8104
+digit search-registry-schema --schema-code pgr --server http://localhost:8104
 ```
 
 ## 9. CREATING AN USER IN ACCOUNT
