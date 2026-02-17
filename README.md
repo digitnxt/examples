@@ -12,7 +12,7 @@ A step-by-step backend developer tutorial for building a complete microservice o
 
 **What you'll learn:**
 
-- Setting up a local DIGIT development environment with 40+ containerized services
+- Setting up a local DIGIT development environment with 20+ containerized services
 - Generating a Spring Boot project from an OpenAPI spec
 - Implementing a layered microservice architecture (Controller, Service, Validation, Client)
 - Integrating with platform services — Workflow, Notifications, ID Generation, Registry, and more
