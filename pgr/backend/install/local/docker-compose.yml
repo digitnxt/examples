@@ -205,8 +205,8 @@ services:
       FILESTORE_PATH: /filestore/v1/files
       SMTP_HOST: smtp.gmail.com
       SMTP_PORT: 587
-      SMTP_USERNAME: digit.sandbox@egovernments.org
-      SMTP_PASSWORD: qxiswrtilznheqxa
+      SMTP_USERNAME: example@gmail.com
+      SMTP_PASSWORD: example_password
       SMTP_FROM_ADDRESS: example@gmail.com
       SMTP_FROM_NAME: egov
       SMS_PROVIDER_URL: http://api.smscountry.com/SMSCwebservice_bulk.aspx
