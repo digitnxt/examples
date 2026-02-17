@@ -1,41 +1,37 @@
 mdms:
-  - schemaCode: "a.baa"
-    uniqueIdentifier: "Alice3"
+  - schemaCode: "RAINMAKER_PGR_ServiceDefs"
+    uniqueIdentifier: "WATER_SUPPLY"
     data:
-      ownerName: "Alice3"
-      RTO: 123
-      car:
-        moduleName: "mod1"
-        carNumber: 456
-        color: "red"
-        engine:
-          Ename: "V8"
-          power: "400hp"
-          average: "15mpg"
-          capacity: "4.0L"
-      contectNumber:
-        - 9876543210
-        - 1234567890
-      address: "Metropolis"
-      state: "Punjab"
+      serviceCode: "WATER_SUPPLY"
+      name: "Water Supply Issue"
+      keywords: "water, supply, shortage, quality"
+      department: "Water Department"
+      slaHours: 72
+      order: 1
+      active: true
+      menuPath: "Complaints.Water"
     isActive: true
-  - schemaCode: "a.baa"
-    uniqueIdentifier: "Alice1"
+  - schemaCode: "RAINMAKER_PGR_ServiceDefs"
+    uniqueIdentifier: "ROAD_REPAIR"
     data:
-      ownerName: "Alice1"
-      RTO: 123
-      car:
-        moduleName: "mod1"
-        carNumber: 456
-        color: "red"
-        engine:
-          Ename: "V8"
-          power: "400hp"
-          average: "15mpg"
-          capacity: "4.0L"
-      contectNumber:
-        - 9876543210
-        - 1234567890
-      address: "Metropolis"
-      state: "Punjab"
+      serviceCode: "ROAD_REPAIR"
+      name: "Road Repair Request"
+      keywords: "road, repair, pothole, maintenance"
+      department: "Public Works Department"
+      slaHours: 168
+      order: 2
+      active: true
+      menuPath: "Complaints.Infrastructure"
+    isActive: true
+  - schemaCode: "RAINMAKER_PGR_ServiceDefs"
+    uniqueIdentifier: "GARBAGE_COLLECTION"
+    data:
+      serviceCode: "GARBAGE_COLLECTION"
+      name: "Garbage Collection Issue"
+      keywords: "garbage, waste, collection, sanitation"
+      department: "Sanitation Department"
+      slaHours: 24
+      order: 3
+      active: true
+      menuPath: "Complaints.Sanitation"
     isActive: true
