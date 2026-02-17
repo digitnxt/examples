@@ -15,21 +15,32 @@ Ensure the following are installed on your machine:
 
 ```bash
 git clone https://github.com/digitnxt/examples.git
+```
+
+```bash
 cd pgr/backend/install/local
+```
 
 ## Spin up Digit 3.0
 
+```bash
 docker compose up -d
+```
+## Cleanup commands after using
 
-## Cleanup
-
+```bash
 docker compose down -v
+```
 
-```
-delete the volumes if you face migration issues. It might fail if there is network issue, do a cleanup using below command in that case too and try "docker compose up -d" again:
-```
+###delete the volumes if you face migration issues. It might fail if there is network issue, do a cleanup using below command in that case too and try "docker compose up -d" again:
+
+```bash
 docker system prune -f --volumes (⚠️ be cautious — this removes all unused containers, images, volumes)
+```
+
+```bash
 docker compose down --volumes --remove-orphans(If you do not want to remove everything)
+```
 
 
 
