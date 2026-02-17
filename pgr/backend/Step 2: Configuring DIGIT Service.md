@@ -130,15 +130,7 @@ digit create-boundaries --file <BOUNDARY_FILE_PATH>
 ```
 NOTE: The CLI currently supports only boundary creation. Hierarchy and relationship support via CLI using yaml file is WIP and will be available in the final release.
 
-
-
-
-
-
-
-
-
-## MDMS CONFIGURATION:
+## 7. MDMS CONFIGURATION:
 Here, we use the --default flag to apply the preconfigured MDMS schema for PGR.
 
 This creates the mdms schema:
@@ -152,6 +144,57 @@ And this command creates the data within the schema:
 digit create-mdms-data --default --schema-code PGR
 ```
 NOTE:The default flag uses [this file](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-data.yaml) for data creation.
+
+## 8. REGISTRY CONFIGURATION: 
+
+```bash
+digit create-registry-schema --default --schema-code "PGR"
+```
+NOTE: The default flag uses [this file](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/pgr2-registry-schema.yaml) for registry schema creation.
+
+Confirm the schema is created using the search command(Append --server for this command alone. It is a WIP and will be fixed in the final release)
+```bash
+digit search-registry-schema --schema-code "PGR" --server http://localhost:8104
+```
+
+## 9. CREATING AN USER IN ACCOUNT
+
+Let us create a user called John Doe with password, mypassword and email, john@example.com.
+
+```bash
+digit create-user --username johndoe --password mypassword --email john@example.com
+```
+
+and make sure the user is created correctly and exists!
+
+```bash
+digit search-user --username johndoe
+
+```
+
+## 10. CREATE ROLE
+
+Here we are creating the role of CSR, i.e., Citizen Service Representative.
+
+```bash
+digit create-role --role-name CSR --description "Administrator role"
+```
+
+## 11. ASSIGN ROLE TO USER
+
+First we must make Johndoe a SUPERUSER.
+
+```bash
+digit assign-role --username johndoe --role-name SUPERUSER
+```
+
+Let us assign our created user Johndoe, the role of CSR.
+
+```bash
+digit assign-role --username johndoe --role-name CSR
+```
+
+That's it! We are ready for developing our module on DIGIT 3.0.
 
 
 
