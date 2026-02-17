@@ -92,16 +92,17 @@ digit create-boundaries --file <BOUNDARY_FILE_PATH>
 ## 7. MDMS SCHEMA:
 Here, we use the --default flag to apply the preconfigured MDMS schema for PGR.
 
-This creates the schema:
+This creates the mdms schema:
 ```bash
-digit create-registry-schema --default --schema-code "PGR"
+digit create-mdms-schema --default --code "PGR"
 ```
+[This](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-schema.yaml) file was used.
 
 And this command creates the data within the schema:
 ```bash
-digit create-mdms-data --file mdms-data.yaml
+digit create-mdms-data --default --schema-code "PGR"
 ```
-[This](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-data.yaml) file was used.
+[This](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-data.yaml) file was used.
 ## 8. REGISTRY SCHEMA: 
 
 Here we are using the file 'pgr2-registry-schema.yaml'. You can download this file [here](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/pgr2-registry-schema.yaml) and copy the path.
