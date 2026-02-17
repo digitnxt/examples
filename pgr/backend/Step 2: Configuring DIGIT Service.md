@@ -4,13 +4,47 @@ To get started with our module, we need to interact with DIGIT platform services
 
 DIGIT CLI is a comprehensive command-line interface for interacting with DIGIT platform services. This CLI tool provides commands for account management, user creation, role assignment, workflow management, template creation, MDMS operations, and more.
 
-Follow along with [this video](https://github.com/digitnxt/digit3/blob/master/docs/tutorials/backend/videos/Configure_with_DIGIT_CLI.mp4)
+The Postman collection for the core services is available [here](https://github.com/digitnxt/examples/blob/develop/pgr/backend/postman-collection/Digit3_Postman_Collection.json).
+
+Alternatively, download and follow along with [this video](https://github.com/digitnxt/digit3/blob/master/docs/tutorials/backend/videos/Configure_with_DIGIT_CLI.mp4)
 
 
 Follow the following steps to configure the PGR module:
 
 0. Install DIGIT CLI
-Please refer [here:](https://github.com/digitnxt/digit3/tree/develop/tools/digit-cli) to install DIGIT CLI based on your OS.
+
+**Linux (x86_64):**
+```bash
+# Download and install
+curl -L -o digit-cli.tar.gz "https://github.com/digitnxt/digit3/releases/latest/download/digit-cli_Linux_x86_64.tar.gz"
+tar -xzf digit-cli.tar.gz
+sudo mv digit /usr/local/bin/
+chmod +x /usr/local/bin/digit
+
+```
+
+**macOS (Intel):**
+```bash
+# Download and install
+curl -L -o digit-cli.tar.gz "https://github.com/digitnxt/digit3/releases/latest/download/digit-cli_Darwin_x86_64.tar.gz"
+tar -xzf digit-cli.tar.gz
+sudo mv digit /usr/local/bin/
+chmod +x /usr/local/bin/digit
+```
+
+**macOS (Apple Silicon):**
+```bash
+# Download and install
+curl -L -o digit-cli.tar.gz "https://github.com/digitnxt/digit3/releases/latest/download/digit-cli_Darwin_arm64.tar.gz"
+tar -xzf digit-cli.tar.gz
+sudo mv digit /usr/local/bin/
+chmod +x /usr/local/bin/digit
+```
+
+**Windows:**
+Download the latest release from the [releases page](https://github.com/digitnxt/digit3/releases) and extract digit.exe
+Add the directory containing digit.exe to your PATH
+
 
 After installation, try the command:
 ```bash
@@ -23,6 +57,8 @@ If you see this:
 <img width="778" height="346" alt="Screenshot 2025-11-21 at 12 26 23 AM" src="https://github.com/user-attachments/assets/c792ef9b-4674-4bc0-9ab5-29142bfa4084" />
 
 Your DIGIT CLI is ready to roll!
+
+NOTE: Refer [here](https://github.com/digitnxt/digit3/tree/develop/tools/digit-cli) for more details on digit-cli.
 
 ## 1. CREATE AN ACCOUNT
 In the context of software architecture, an "account" (previously refered to a tenant) typically refers to an individual or organization that uses a shared software application or service. Each tenant operates within its isolated portion of the application's resources, such as data, configuration, and user interface. To learn more click [here](https://docs.digit.org/faqs/the-concept-of-tenant-in-digit#what-is-a-tenant)
@@ -41,7 +77,7 @@ Customize the account’s experience and settings after sign-up, by setting up t
 digit config set --server http://localhost:8095 --account AMARAVATI --client-id auth-server --client-secret changeme --username test@example.com --password default
 ```
 
-NOTE: In case of token expiry run the above command again.
+NOTE: In case of token expiry in any of the further steps, run the above command again.
 
 ## 3. IDGEN CONFIGURATION: Configure the template we require for ID generation in the PGR module:
 
@@ -59,9 +95,13 @@ Here we are using the default configuration which has all the process, states an
 ```bash
 digit create-workflow  --code PGR --default
 ```
-Note1: The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-workflow.yaml)
+make sure configuration is created.
 
-Note2: Use the below command to override the default workflow:
+```bash
+digit search-workflow --code PGR
+```
+
+Use the below command to override the default workflow configuration:
 ```bash
 digit create-workflow  --code PGR --file <WORKFLOW_FILE_PATH>
 ```
@@ -77,34 +117,44 @@ digit create-notification-template --template-id "my-template" --version "1.0.0"
 
 ## 6. BOUNDARY CONFIGURATION: Configure the boundary hierarchy, boundaries and boundary relationships require for the PGR module:
 
-Here we are using the default configuration which has all the boundary hierarchy, boundaries and boundary relationships we require. 
+Here we are using the default configuration. 
 
 ```bash
 digit create-boundaries --default
 ```
-Note1: The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-boundaries.yaml)
+NOTE : The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-boundaries.yaml) for boundary creation.
 
-Note1: Use the below command to override the default boundaries:
+Use the below command to override the default boundary configuration:
 ```bash
 digit create-boundaries --file <BOUNDARY_FILE_PATH>
 ```
-## 7. MDMS SCHEMA:
-Here we are using the default flag which has the default configuration for PGR.
+NOTE: The CLI currently supports only boundary creation. Hierarchy and relationship support via CLI using yaml file is WIP and will be available in the final release.
 
+## 7. MDMS CONFIGURATION:
+Here, we use the --default flag to apply the preconfigured MDMS schema for PGR.
+
+This creates the mdms schema:
 ```bash
 digit create-mdms-schema --default --code "PGR"
 ```
-## 8. REGISTRY SCHEMA: 
+NOTE: The default flag use [this file](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-schema.yaml) for schema creation.
 
-Here we are using the file 'pgr2-registry-schema.yaml' which has all the process, states and actions we require. You can download this file [here](https://github.com/digitnxt/digit3/blob/master/docs/tutorials/backend/examples/pgr2-registry-schema.yaml) and copy the path.
+And this command creates the data within the schema:
+```bash
+digit create-mdms-data --default --schema-code PGR
+```
+NOTE:The default flag uses [this file](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-data.yaml) for data creation.
+
+## 8. REGISTRY CONFIGURATION: 
 
 ```bash
-digit create-registry-schema --file <REGISTRY_FILE_PATH>
+digit create-registry-schema --default --schema-code "PGR"
 ```
+NOTE: The default flag uses [this file](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/pgr2-registry-schema.yaml) for registry schema creation.
 
 Confirm the schema is created using the search command(Append --server for this command alone. It is a WIP and will be fixed in the final release)
 ```bash
-digit search-registry-schema --schema-code pgr2 --server http://localhost:8104
+digit search-registry-schema --schema-code "PGR" --server http://localhost:8104
 ```
 
 ## 9. CREATING AN USER IN ACCOUNT
