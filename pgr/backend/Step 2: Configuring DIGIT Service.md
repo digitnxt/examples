@@ -10,7 +10,43 @@ Follow along with [this video](https://github.com/digitnxt/digit3/blob/master/do
 Follow the following steps to configure the PGR module:
 
 0. Install DIGIT CLI
-Please refer [here:](https://github.com/digitnxt/digit3/tree/develop/tools/digit-cli) to install DIGIT CLI based on your OS.
+
+Download the latest release for your platform from the [releases page](https://github.com/digitnxt/digit3/releases):
+
+**Linux (x86_64):**
+```bash
+# Download and install
+curl -L -o digit-cli.tar.gz "https://github.com/digitnxt/digit3/releases/latest/download/digit-cli_Linux_x86_64.tar.gz"
+tar -xzf digit-cli.tar.gz
+sudo mv digit /usr/local/bin/
+chmod +x /usr/local/bin/digit
+
+```
+
+**macOS (Intel):**
+```bash
+# Download and install
+curl -L -o digit-cli.tar.gz "https://github.com/digitnxt/digit3/releases/latest/download/digit-cli_Darwin_x86_64.tar.gz"
+tar -xzf digit-cli.tar.gz
+sudo mv digit /usr/local/bin/
+chmod +x /usr/local/bin/digit
+```
+
+**macOS (Apple Silicon):**
+```bash
+# Download and install
+curl -L -o digit-cli.tar.gz "https://github.com/digitnxt/digit3/releases/latest/download/digit-cli_Darwin_arm64.tar.gz"
+tar -xzf digit-cli.tar.gz
+sudo mv digit /usr/local/bin/
+chmod +x /usr/local/bin/digit
+```
+
+**Windows:**
+```powershell
+# Download from releases page and extract digit.exe
+# Add the directory containing digit.exe to your PATH
+```
+
 
 After installation, try the command:
 ```bash
@@ -23,6 +59,8 @@ If you see this:
 <img width="778" height="346" alt="Screenshot 2025-11-21 at 12 26 23 AM" src="https://github.com/user-attachments/assets/c792ef9b-4674-4bc0-9ab5-29142bfa4084" />
 
 Your DIGIT CLI is ready to roll!
+
+NOTE: Please refer [here:](https://github.com/digitnxt/digit3/tree/develop/tools/digit-cli) for more details on digit-cli.
 
 ## 1. CREATE AN ACCOUNT
 In the context of software architecture, an "account" (previously refered to a tenant) typically refers to an individual or organization that uses a shared software application or service. Each tenant operates within its isolated portion of the application's resources, such as data, configuration, and user interface. To learn more click [here](https://docs.digit.org/faqs/the-concept-of-tenant-in-digit#what-is-a-tenant)
