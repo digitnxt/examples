@@ -48,8 +48,9 @@ RegistrySchemaCode=pgr2 \
 ````
 Your pom.xml, application.properties, models, controller file and config files are all generated. 
 
-NOTE1: Change the flags idgenTemplateCode, WorkflowProcessCode, RegistrySchemaCode to what was configured in CLI accordingly.
-NOTE2: Make sure the base URLS are as below:
+NOTE 1: Change the flags idgenTemplateCode, WorkflowProcessCode, RegistrySchemaCode to what was configured in CLI accordingly.
+
+NOTE 2: Make sure the base URLS are as below:
 
 ```bash
 digit.services.boundary.base-url=http://localhost:8095
@@ -59,6 +60,10 @@ digit.services.notification.base-url=http://localhost:8095
 digit.services.filestore.base-url=http://localhost:8095
 digit.services.registry.base-url=http://localhost:8095
 ```
+NOTE 3: 
+In docker-compose.yaml update the below ENV variables in notification service with your credentials to enable send notification in the application.
+SMTP_USERNAME: example@gmail.com
+SMTP_PASSWORD: example_password
 
 ### 2. Import in IDE.
 
