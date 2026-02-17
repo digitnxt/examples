@@ -93,12 +93,13 @@ Here we are using the default configuration which has all the process, states an
 ```bash
 digit create-workflow  --code PGR --default
 ```
+NOTE : The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-workflow.yaml) for workflow configuration.
+
 make sure configuration is created.
 
 ```bash
 digit search-workflow --code PGR
 ```
-NOTE : The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-workflow.yaml) for workflow configuration
 
 Use the below command to override the default workflow configuration:
 ```bash
