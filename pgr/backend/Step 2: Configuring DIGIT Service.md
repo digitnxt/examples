@@ -195,24 +195,3 @@ digit assign-role --username johndoe --role-name CSR
 ```
 
 That's it! We are ready for developing our module on DIGIT 3.0.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
