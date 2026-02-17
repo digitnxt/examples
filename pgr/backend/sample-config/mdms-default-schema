@@ -1,0 +1,27 @@
+schema:
+  code: "RAINMAKER_PGR_ServiceDefs"
+  description: "Schema for PGR Service Definitions"
+  definition:
+    $schema: "http://json-schema.org/draft-07/schema#"
+    type: "object"
+    properties:
+      serviceCode:
+        type: "string"
+      name:
+        type: "string"
+      keywords:
+        type: "string"
+      department:
+        type: "string"
+      slaHours:
+        type: "number"
+      order:
+        type: "number"
+      active:
+        type: "boolean"
+      menuPath:
+        type: "string"
+    required: ["serviceCode", "name", "department", "slaHours", "active"]
+    x-unique: ["serviceCode"]
+    x-ref-schema: []
+  isActive: true
