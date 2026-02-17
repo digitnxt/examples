@@ -93,8 +93,6 @@ Here we are using the default configuration which has all the process, states an
 ```bash
 digit create-workflow  --code PGR --default
 ```
-NOTE : The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-workflow.yaml) for workflow configuration.
-
 make sure configuration is created.
 
 ```bash
@@ -141,7 +139,7 @@ NOTE: The default flag use [this file](https://github.com/digitnxt/examples/blob
 
 And this command creates the data within the schema:
 ```bash
-digit create-mdms-data --default --schema-code "PGR"
+digit create-mdms-data --default --schema-code PGR
 ```
 NOTE:The default flag uses [this file](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-data.yaml) for data creation.
 ## 8. REGISTRY CONFIGURATION: 
