@@ -93,6 +93,11 @@ Here we are using the default configuration which has all the process, states an
 ```bash
 digit create-workflow  --code PGR --default
 ```
+make sure configuration is created.
+
+```bash
+digit search-workflow --code PGR
+```
 Note1: The default flag uses [this file](https://github.com/digitnxt/digit3/blob/develop/tools/digit-cli/example-workflow.yaml)
 
 Note2: Use the below command to override the default workflow:
@@ -124,7 +129,7 @@ digit create-boundaries --file <BOUNDARY_FILE_PATH>
 ```
 NOTE: The CLI currently supports only boundary creation. Hierarchy and relationship support via CLI using yaml file is WIP and will be available in the final release.
 
-## 7. MDMS SCHEMA:
+## 7. MDMS CONFIGURATION:
 Here, we use the --default flag to apply the preconfigured MDMS schema for PGR.
 
 This creates the mdms schema:
@@ -138,17 +143,17 @@ And this command creates the data within the schema:
 digit create-mdms-data --default --schema-code "PGR"
 ```
 [This](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-data.yaml) file was used.
-## 8. REGISTRY SCHEMA: 
+## 8. REGISTRY CONFIGURATION: 
 
 Here we are using the file 'pgr2-registry-schema.yaml'. You can download this file [here](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/pgr2-registry-schema.yaml) and copy the path.
 
 ```bash
-digit create-registry-schema --default --schema-code "pgr"
+digit create-registry-schema --default --schema-code "PGR"
 ```
 
 Confirm the schema is created using the search command(Append --server for this command alone. It is a WIP and will be fixed in the final release)
 ```bash
-digit search-registry-schema --schema-code pgr --server http://localhost:8104
+digit search-registry-schema --schema-code "PGR" --server http://localhost:8104
 ```
 
 ## 9. CREATING AN USER IN ACCOUNT
