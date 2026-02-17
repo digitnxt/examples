@@ -41,7 +41,7 @@ chmod +x /usr/local/bin/digit
 
 **Windows:**
 ```powershell
-# Download the latest release from the [releases page](https://github.com/digitnxt/digit3/releases) and extract digit.exe
+Download the latest release from the [releases page](https://github.com/digitnxt/digit3/releases) and extract digit.exe
 # Add the directory containing digit.exe to your PATH
 ```
 
