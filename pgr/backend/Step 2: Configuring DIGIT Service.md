@@ -136,13 +136,13 @@ This creates the mdms schema:
 ```bash
 digit create-mdms-schema --default --code "PGR"
 ```
-[This](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-schema.yaml) file was used.
+[This](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-schema.yaml) file was used for default schema creation.
 
 And this command creates the data within the schema:
 ```bash
 digit create-mdms-data --default --schema-code "PGR"
 ```
-[This](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-data.yaml) file was used.
+[This](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-data.yaml) file was used for default data creation.
 ## 8. REGISTRY CONFIGURATION: 
 
 Here we are using the file 'pgr2-registry-schema.yaml'. You can download this file [here](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/pgr2-registry-schema.yaml) and copy the path.
