@@ -128,7 +128,15 @@ digit create-boundaries --file <BOUNDARY_FILE_PATH>
 ```
 NOTE: The CLI currently supports only boundary creation. Hierarchy and relationship support via CLI using yaml file is WIP and will be available in the final release.
 
-## 7. MDMS CONFIGURATION:
+
+
+
+
+
+
+
+
+## MDMS CONFIGURATION:
 Here, we use the --default flag to apply the preconfigured MDMS schema for PGR.
 
 This creates the mdms schema:
@@ -142,6 +150,29 @@ And this command creates the data within the schema:
 digit create-mdms-data --default --schema-code PGR
 ```
 NOTE:The default flag uses [this file](https://github.com/digitnxt/examples/blob/develop/pgr/backend/sample-config/mdms-default-data.yaml) for data creation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 8. REGISTRY CONFIGURATION: 
 
 ```bash
