@@ -56,7 +56,7 @@ If you see this:
 
 Your DIGIT CLI is ready to roll!
 
-NOTE: Please refer [here:](https://github.com/digitnxt/digit3/tree/develop/tools/digit-cli) for more details on digit-cli.
+NOTE: Please refer [here](https://github.com/digitnxt/digit3/tree/develop/tools/digit-cli) for more details on digit-cli.
 
 ## 1. CREATE AN ACCOUNT
 In the context of software architecture, an "account" (previously refered to a tenant) typically refers to an individual or organization that uses a shared software application or service. Each tenant operates within its isolated portion of the application's resources, such as data, configuration, and user interface. To learn more click [here](https://docs.digit.org/faqs/the-concept-of-tenant-in-digit#what-is-a-tenant)
