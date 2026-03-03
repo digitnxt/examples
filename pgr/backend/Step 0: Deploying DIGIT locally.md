@@ -16,11 +16,11 @@ Ensure the following are installed on your machine:
 ## Clone the Repo
 
 ```bash
-git clone https://github.com/digitnxt/examples.git DIGIT
+git clone https://github.com/digitnxt/examples.git digit-server
 ```
 
 ```bash
-cd DIGIT
+cd digit-server
 ```
 
 ```bash
