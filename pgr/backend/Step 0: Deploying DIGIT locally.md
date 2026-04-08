@@ -16,19 +16,25 @@ Ensure the following are installed on your machine:
 ## Clone the Repo
 
 ```bash
-git clone https://github.com/digitnxt/examples.git
+git clone https://github.com/digitnxt/examples.git digit-server
+```
+
+```bash
+cd digit-server
 ```
 
 ```bash
 cd pgr/backend/install/local
 ```
 
-## Spin up Digit 3.0
+## Start Digit 3.0
 
 ```bash
 docker compose up -d
 ```
-NOTE:Continue with the next steps only after Docker containers are fully up and healthy.If you face any issues, clean up volumes and retry.There may be port conflicts if any required ports are already in use on your local machine.Free up the conflicting ports and run the setup again in such cases.
+NOTE: Continue with the next steps only after Docker containers are fully up and healthy. If you face any issues, clean up volumes and retry. There may be port conflicts if any required ports are already in use on your local machine. Free up the conflicting ports and run the setup again in such cases.
+
+Visit [http://localhost:8095](http://localhost:8095)
 
 ## Cleanup commands at the end to free up memory
 

@@ -12,17 +12,19 @@ To setup the DIGIT development environment the following tools are required for 
 
    * **Install Git**
 
-     [Git for windows](https://git-scm.com/download/win)
+     [Git for Windows](https://git-scm.com/download/win)
 
      [Git for Linux](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-18-04-quickstart)
+     
    * **Install JDK17**
 
-     [JDK17 for windows](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+     [JDK17 for Windows](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 
      [JDK17 for Linux](https://javahelps.com/install-oracle-jdk-17-on-linux)
+     
    * **Install IDE** - To create SpringBoot/Java applications it is recommended to use IntelliJ IDE. IntelliJ can be downloaded from the following links -
 
-     [IntelliJ for windows](https://www.jetbrains.com/idea/download/#section=windows)
+     [IntelliJ for Windows](https://www.jetbrains.com/idea/download/#section=windows)
 
      [IntelliJ for Linux](https://www.jetbrains.com/idea/download/#section=linux)
    * Install the Lombok plugins for IntelliJ as we use Lombok annotations in this module.
@@ -32,7 +34,7 @@ To setup the DIGIT development environment the following tools are required for 
 
    * **Install Postman** - To install Postman, follow the following links -
 
-     [Postman for windows](https://www.postman.com/downloads/)
+     [Postman for Windows](https://www.postman.com/downloads/)
 
      [Postman for Linux](https://dl.pstmn.io/download/latest/linux64)
      
